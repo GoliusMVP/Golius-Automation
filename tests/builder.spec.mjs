@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+test.beforeEach(async ({ page }) => {
+ await page.route('**/cdn-cgi/trace', route => route.fulfill({ contentType: 'text/plain', body: 'loc=US\n' }));
+});
 const skill=(page,id)=>page.locator(`.skill-card[data-skill="${id}"]`);
 async function generate(page){await page.getByRole('button',{name:'Generate plan'}).click();await expect(page.locator('#run-animation')).toBeEnabled();}
 async function runToApproval(page){await page.clock.install();await page.locator('#run-animation').click();await page.clock.runFor(6500);await expect(page.locator('#approve-example')).toBeVisible();}
@@ -57,7 +60,7 @@ test('demo remains local and legal/sales links resolve honestly',async({page,con
  await page.goto('/');await generate(page);await runToApproval(page);await page.locator('#approve-example').click();await page.clock.runFor(4000);
  expect(external).toEqual([]);expect(await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
  await expect(page.locator('#sales a.button')).toHaveAttribute('href','https://calendly.com/gorovoy-golius/30min');
- await page.getByRole('link',{name:'Impressum',exact:true}).click();await expect(page.getByRole('heading',{name:'Impressum',exact:true})).toBeVisible();await expect(page.locator('.legal-warning')).toContainText('before');
+ await page.getByRole('link',{name:'Imprint',exact:true}).click();await expect(page.getByRole('heading',{name:'Impressum',exact:true})).toBeVisible();await expect(page.locator('.legal-warning')).toContainText('before');
 });
 
 test('mobile playback keeps the active approval and its decision in view',async({page})=>{

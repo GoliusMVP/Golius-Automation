@@ -20,7 +20,8 @@ for(const file of ['index.html','legal.html']) {
   for(const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
     const value=match[1];
     if(/^(https?:|mailto:|data:)/.test(value))continue;
-    const [name,fragment]=value.split('#');
+    const [target,fragment]=value.split('#');
+    const name=target.split('?')[0];
     if(name){assert.ok((await stat(name)).isFile(),`Missing target ${value}`);}
     else if(fragment)assert.ok(ids.includes(fragment),`Missing anchor ${value}`);
     if(name&&fragment&&name.endsWith('.html'))assert.ok((await readFile(name,'utf8')).includes(`id="${fragment}"`),`Missing legal anchor ${value}`);

@@ -1,6 +1,6 @@
 # Golius public website
 
-The public GitHub Pages website for **golius.de**, from https://github.com/user44423/Golius-Automation. This project is separate from agents.golius.de.
+The public GitHub Pages website for **golius.de**, from https://github.com/GoliusMVP/Golius-Automation. This project is separate from agents.golius.de.
 
 A static, responsive product website with a local interactive Agent Builder. No runtime dependencies, backend, API, credentials or database. The original GitHub Pages root and CNAME remain compatible.
 
@@ -45,6 +45,14 @@ Six selectable skills, prepared fictional customer data, and a goal label of 1â€
 
 Sales links use the booking URL already present in the original project. No booking widget, external fonts, analytics or fake contact submission is included.
 
+## Languages
+
+The website and interactive demo support English and German. A same-origin request to Cloudflare's `/cdn-cgi/trace` selects German for `loc=DE` and English for other countries, regardless of browser language. No third-party geolocation service, location permission, cookies or browser storage are used. If the request fails, returns an unknown country or exceeds 1.5 seconds, the primary browser language is used (German or English). VPN/proxy exit locations determine the detected country.
+
+The header's DE / EN controls override automatic detection using `?lang=de` or `?lang=en`. This choice is preserved when navigating between the homepage and legal page. Remove `lang` from the URL to return to automatic detection. Without JavaScript, the static English content remains available. Translation copy lives in `assets/js/translations.mjs`.
+
+Checks include Germany with an English browser, foreign countries with a German browser, explicit overrides, failed/invalid/stalled lookups, translated approval playback, legal navigation and German layouts at 320, 390, 768 and 1440 pixels.
+
 ## Publication
 
-**Not deployed.** First supply verified Impressum and Datenschutz content. See [the implementation and deployment report](docs/REDESIGN-REPORT.md) for actual checks, screenshots, publishing steps, baseline and rollback.
+Published through the existing GitHub Pages root deployment from `main`. `CNAME` remains `golius.de`. The initial redesign was published as commit `1d672f6` with explicit authorization to preserve its existing content, including the marked legal placeholders. See [the implementation and deployment report](docs/REDESIGN-REPORT.md) for the original checks, screenshots, publishing steps, baseline and rollback. Cloudflare Access settings are separate from GitHub Pages publication.

@@ -1,3 +1,4 @@
+import { translate } from './locale.mjs';
 export const DEFAULT_GOAL = 'Process incoming customer emails';
 export const SKILLS = Object.freeze([
   { id: 'search', title: 'Search records', description: 'Find the right context.', icon: 'search' },
@@ -22,27 +23,30 @@ const samples = {
 };
 
 /** Curated planning only: no network, model calls, random outcomes or side effects. */
-export function createPlan(selected, goal) {
+export function createPlan(selected, goal, language = 'en') {
+  const t = (source, values) => translate(source, language, values);
   const known = new Set(SKILLS.map(skill => skill.id));
   const chosen = new Set([...selected].filter(id => known.has(id)));
   const title = typeof goal === 'string' ? goal.trim() : '';
-  if (!title || title.length > 160) throw new Error('Give your agent a goal of 1–160 characters.');
-  if (chosen.size === 0) throw new Error('Choose at least one skill to explore a workflow.');
+  if (!title || title.length > 160) throw new Error(t('Give your agent a goal of 1–160 characters.'));
+  if (chosen.size === 0) throw new Error(t('Choose at least one skill to explore a workflow.'));
   const steps = ORDER.filter(id => chosen.has(id)).map(id => {
     const missing = requirements[id].filter(dependency => !chosen.has(dependency));
-    const missingNames = missing.map(dependency => SKILLS.find(skill => skill.id === dependency).title);
-    const limitation = missingNames.length ? `Add ${missingNames.join(' + ')} to make this step possible.` : '';
+    const missingNames = missing.map(dependency => t(SKILLS.find(skill => skill.id === dependency).title));
+    const limitation = missingNames.length ? t('Add {skills} to make this step possible.', { skills: missingNames.join(' + ') }) : '';
     const step = { id, icon: SKILLS.find(skill => skill.id === id).icon, ...samples[id], missing, blocked: missing.length > 0, limitation };
     if (id === 'approval' && !chosen.has('crm')) step.output = chosen.has('draft')
       ? 'Example review: check the fictional acknowledgement draft. Approving continues this illustration; no message will be sent.'
       : 'Example review: check the fictional customer request. Approving continues this local illustration; no live action follows.';
+    for (const field of ['title', 'description', 'output', 'detail']) step[field] = t(step[field]);
     return step;
   });
   const limitations = steps.filter(step => step.blocked).map(step => `${step.title}: ${step.limitation}`);
-  if (!chosen.has('mail')) limitations.unshift('No email source is selected. This email example cannot receive customer requests.');
-  if (chosen.has('draft') && !chosen.has('search')) limitations.push('Without Search records, the draft is a general acknowledgement, with no customer-record context.');
+  if (!chosen.has('mail')) limitations.unshift(t('No email source is selected. This email example cannot receive customer requests.'));
+  if (chosen.has('draft') && !chosen.has('search')) limitations.push(t('Without Search records, the draft is a general acknowledgement, with no customer-record context.'));
   const incomplete = steps.some(step => step.blocked);
   steps.push({ id: 'complete', icon: incomplete ? 'warning' : 'check', title: incomplete ? 'Review the gaps' : 'Task completed', description: incomplete ? 'Some skills need dependencies' : 'The example has finished', blocked: false, missing: [], limitation: '', detail: 'A summary of this local illustration, not evidence of a live execution.', output: incomplete ? 'Illustration finished with missing dependencies. Blocked steps were not simulated. Adjust your skills and generate a new plan.' : 'Illustration complete. Your selected sample steps are finished. No accounts were connected and no real actions were taken.' });
+  for (const field of ['title', 'description', 'output', 'detail']) steps.at(-1)[field] = t(steps.at(-1)[field]);
   // This short line remains true for arbitrary goal labels: the sample is always
   // an email workflow, never an invented general-purpose AI-generated plan.
   return { goal: title, selected: ORDER.filter(id => chosen.has(id)), steps, limitations, incomplete };

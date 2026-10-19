@@ -1,10 +1,11 @@
+import { translate } from './locale.mjs';
 import { icon } from './icons.mjs';
 const SVG = 'http://www.w3.org/2000/svg';
 const statusLabels = { ready: 'Ready', active: 'In progress', complete: 'Complete', approval: 'Awaiting approval', blocked: 'Dependency missing' };
 
 export class WorkflowCanvas {
-  constructor({ canvas, list, connections, onInspect }) {
-    Object.assign(this, { canvas, list, connections, onInspect });
+  constructor({ canvas, list, connections, onInspect, language = 'en' }) {
+    Object.assign(this, { canvas, list, connections, onInspect, language });
     this.steps = [];
     this.statuses = [];
     this.index = -1;
@@ -42,8 +43,8 @@ export class WorkflowCanvas {
     this.list.querySelectorAll('.flow-node').forEach((node, position) => {
       const status = statuses[position] ?? 'ready';
       node.dataset.status = status;
-      node.querySelector('.node-status').textContent = this.preview && status === 'ready' ? 'Example step' : statusLabels[status];
-      node.setAttribute('aria-label', `Step ${position + 1}: ${this.steps[position].title}. ${statusLabels[status]}. Inspect sample output.`);
+      node.querySelector('.node-status').textContent = this.preview && status === 'ready' ? translate('Example step', this.language) : translate(statusLabels[status], this.language);
+      node.setAttribute('aria-label', translate('Step {number}: {title}. {status}. Inspect sample output.', this.language, { number: position + 1, title: this.steps[position].title, status: translate(statusLabels[status], this.language) }));
       if (index === position) node.setAttribute('aria-current', 'step'); else node.removeAttribute('aria-current');
       node.querySelector('.node-number').textContent = status === 'complete' ? '✓' : String(position + 1).padStart(2, '0');
     });

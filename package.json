@@ -7,7 +7,7 @@
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
     "lint": "node scripts/check.mjs",
-    "test": "node --test tests/plan.test.mjs tests/runner.test.mjs",
+    "test": "node --test tests/plan.test.mjs tests/runner.test.mjs tests/locale.test.mjs",
     "test:browser": "playwright test"
   },
   "devDependencies": { "@playwright/test": "1.64.1" },
