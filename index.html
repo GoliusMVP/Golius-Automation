@@ -1,267 +1,77 @@
-<!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golius Automation | Automatisierung für Steuerkanzleien</title>
-    <meta name="description" content="Automatisierung für Steuerkanzleien. Weniger Verwaltungsaufwand. Mehr Zeit für Mandanten. Datenschutzorientierte und selbst gehostete Lösungen.">
-    <meta name="keywords" content="Automatisierung Steuerkanzlei, Prozessautomatisierung Steuerberater, Dokumentenautomatisierung Kanzlei, Datenschutz Automatisierung">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        kanzlei: {
-                            slate: '#0f172a',
-                            blue: '#1e3a8a',
-                            accent: '#2563eb',
-                            bg: '#f8fafc'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golius — AI agents that get work done</title>
+  <meta name="description" content="Connect your existing systems, combine the skills your business needs, and explore what an AI agent could do. Try the interactive Golius Agent Builder.">
+  <meta name="theme-color" content="#f9faf8">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/builder.css">
+  <script type="module" src="assets/js/site.mjs"></script>
 </head>
-<body class="bg-kanzlei-bg text-kanzlei-slate font-sans antialiased">
-
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <img src="logo.png.png" alt="Golius Logo" class="h-10 w-auto">
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="#probleme" class="hover:text-kanzlei-accent transition">Probleme</a>
-                <a href="#loesungen" class="hover:text-kanzlei-accent transition">Leistungen</a>
-                <a href="#datenschutz" class="hover:text-kanzlei-accent transition">Datenschutz</a>
-                <a href="#ablauf" class="hover:text-kanzlei-accent transition">Ablauf</a>
-                <a href="#faq" class="hover:text-kanzlei-accent transition">FAQ</a>
-            </nav>
-            <div>
-                <a href="#kontakt" class="bg-kanzlei-slate text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-kanzlei-accent transition shadow-sm">
-                    Kontakt
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="relative py-20 lg:py-32 overflow-hidden bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <span class="text-xs font-semibold uppercase tracking-wider text-kanzlei-accent bg-blue-50 px-3 py-1 rounded-full">Positionierung</span>
-                <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-kanzlei-slate">
-                    Automatisierung für Steuerkanzleien
-                </h1>
-                <p class="mt-6 text-xl text-slate-600 leading-relaxed">
-                    Reduzieren Sie Verwaltungsaufwand, beschleunigen Sie Dokumentenprozesse und entlasten Sie Ihr Team durch intelligente Automatisierung. Weniger Aufwand. Mehr Zeit für Mandanten.
-                </p>
-                <div class="mt-10">
-                    <a href="https://calendly.com/gorovoy-golius/30min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-kanzlei-accent hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
-                        Kostenloses Beratungsgespräch vereinbaren
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-50 opacity-50 skew-x-12 transform origin-top-right hidden lg:block"></div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a href="#" class="brand" aria-label="Golius home"><img src="assets/mark.svg" width="31" height="31" alt=""><span>Golius<span class="brand-period">.</span></span></a>
+      <div class="nav-links"><a href="#builder">Agent Builder</a><a href="#possibilities">Platform</a><a href="#control">Control</a></div>
+      <a class="button button-small button-dark" href="#sales">Talk to Sales <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-heading">
+      <p class="eyebrow"><span class="tiny-mark" aria-hidden="true"></span> YOUR SYSTEMS. WORKING TOGETHER.</p>
+      <h1 id="hero-heading">AI agents that<br><span>get work done.</span></h1>
+      <p class="hero-copy">Connect your existing systems, choose the skills your business needs,<br class="desktop-break"> and turn repetitive processes into intelligent workflows.</p>
+      <div class="hero-actions"><a class="button button-dark" href="#builder" data-build-link>Build your agent <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#sales">Talk to Sales</a></div>
+      <p class="hero-caption">Your tools. Your process. A new way to put them together.</p>
     </section>
 
-    <section id="probleme" class="py-20 border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold tracking-tight text-kanzlei-slate">Herausforderungen im Kanzleialltag</h2>
-                <p class="mt-4 text-lg text-slate-600">Die Digitalisierung bringt Hürden mit sich, die wertvolle Ressourcen binden.</p>
-            </div>
-            <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-500 font-bold mb-4">✕</div>
-                    <h3 class="text-lg font-semibold text-kanzlei-slate">Dokumentenflut & E-Mails</h3>
-                    <p class="mt-2 text-sm text-slate-600">Unstrukturierter Eingang von Belegen und permanent steigendes E-Mail-Aufkommen.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm">
-                    <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-500 font-bold mb-4">✕</div>
-                    <h3 class="text-lg font-semibold text-kanzlei-slate">Fristen & Dateneingabe</h3>
-                    <p class="mt-2 text-sm text-slate-600">Manuelle Übertragungen kosten Zeit und erhöhen das Risiko von Fehlern im Fristenmanagement.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm sm:col-span-2 lg:col-span-1">
-                    <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-500 font-bold mb-4">✕</div>
-                    <h3 class="text-lg font-semibold text-kanzlei-slate">Fachkräftemangel</h3>
-                    <p class="mt-2 text-sm text-slate-600">Ineffiziente, repetitive Prozesse blockieren Ihre qualifizierten Mitarbeiter.</p>
-                </div>
-            </div>
+    <section id="builder" class="builder-section wrap" aria-labelledby="builder-heading">
+      <div class="section-intro"><div><p class="eyebrow">LESS EXPLAINING. MORE EXPLORING.</p><h2 id="builder-heading">Start with a little “what if.”</h2></div><p>Pick the skills. Set a goal.<br>See how the work could flow.</p></div>
+      <div class="builder" data-builder>
+        <div class="builder-bar"><div class="builder-title"><img src="assets/mark.svg" alt="" width="20" height="20"><span>Agent Builder</span><span class="bar-divider" aria-hidden="true">/</span><span class="muted">Customer operations</span></div><span class="demo-badge"><span aria-hidden="true"></span> Interactive demo</span></div>
+        <div class="builder-body">
+          <form class="builder-config" id="builder-form" novalidate>
+            <div class="config-heading"><span class="step-label">01 / CONFIGURE</span><button type="button" class="text-button" id="reset-builder">Reset <span aria-hidden="true">↺</span></button></div>
+            <label class="field-label" for="agent-goal">What should your agent do?</label>
+            <textarea id="agent-goal" name="goal" rows="2" maxlength="160" required aria-describedby="goal-hint">Process incoming customer emails</textarea>
+            <p class="field-hint" id="goal-hint">A curated email example. Your goal names the demo; it isn’t sent to an AI.</p>
+            <fieldset><legend class="field-label skill-legend">Give it the right skills <span id="selection-count">5 selected</span></legend><div class="skill-grid" id="skill-options"></div></fieldset>
+            <p class="config-error" id="config-error" role="alert" hidden></p>
+            <button type="submit" class="button button-blue generate-button" id="generate-plan">Generate plan <span aria-hidden="true">→</span></button>
+            <p class="local-note"><span data-icon="shield" aria-hidden="true"></span> Runs locally. Uses fictional sample data.</p>
+          </form>
+          <div class="builder-workspace">
+            <div class="workspace-toolbar"><div><span class="step-label">02 / YOUR WORKFLOW</span><h3 id="workflow-title">A customer email. A clear next step.</h3></div><span class="workflow-state" id="workflow-state">Example preview</span></div>
+            <div class="plan-notice" id="plan-notice" role="status" hidden></div>
+            <div class="flow-canvas" id="flow-canvas" role="group" aria-label="Illustrative workflow"><svg class="flow-connections" id="flow-connections" aria-hidden="true"></svg><ol class="flow-nodes" id="flow-nodes" aria-label="Workflow steps"></ol></div>
+            <div class="sample-panel" id="sample-panel"><div class="sample-heading"><span class="sample-dot" aria-hidden="true"></span><span id="sample-label">A LOOK INSIDE</span><span class="sample-tag">Sample data</span></div><p id="sample-output" role="status" aria-live="polite" aria-atomic="true">Select a step to explore its sample output, or generate your own illustrative plan.</p><div class="approval-controls" id="approval-controls" hidden><p>Nothing moves forward until you choose to approve this fictional example.</p><button class="button button-blue" id="approve-example" type="button">Approve example <span aria-hidden="true">✓</span></button></div></div>
+            <div class="workspace-footer"><p id="run-status" role="status" aria-live="polite" aria-atomic="true">Choose your skills, then generate a plan.</p><button class="button button-dark run-button" id="run-animation" type="button" disabled><span data-icon="play" aria-hidden="true"></span><span id="run-button-label">Run animation</span></button></div>
+          </div>
         </div>
+        <div class="builder-disclaimer"><span>ILLUSTRATION, NOT EXECUTION</span><p>No accounts connected. No customer data processed. No real actions taken.</p></div>
+      </div>
+      <noscript><p class="noscript-note">The interactive demo needs JavaScript. The site and sales contact remain available without it. This demo never connects to your accounts.</p></noscript>
+      <div class="builder-completion" id="builder-completion" hidden><div><p class="eyebrow">THAT WAS JUST ONE POSSIBILITY.</p><h3>Imagine what your business could automate.</h3></div><a class="button button-dark" href="#sales">Talk to Sales <span aria-hidden="true">↗</span></a></div>
     </section>
 
-    <section id="loesungen" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold tracking-tight text-kanzlei-slate">Unsere Automatisierungs-Leistungen</h2>
-                <p class="mt-4 text-lg text-slate-600">Maßgeschneiderte Workflows für zukunftssichere Kanzleien.</p>
-            </div>
-            <img src="ablauf.png.png" alt="Golius Ablaufplan" class="w-full h-auto rounded-2xl shadow-lg">
-            </div>
-        </div>
+    <section class="capabilities wrap" id="possibilities" aria-labelledby="capabilities-heading">
+      <div class="section-intro"><div><p class="eyebrow">BUILT AROUND THE WAY YOU WORK</p><h2 id="capabilities-heading">Keep your tools.<br>Change what’s possible.</h2></div><p>Good automation joins the dots.<br>It doesn’t make you start over.</p></div>
+      <div class="capability-grid">
+        <article><span class="feature-icon" data-icon="connect" aria-hidden="true"></span><h3>Connect what you use.</h3><p>Bring existing business systems into the conversation. Start with the tools and access you already have.</p><span class="feature-index">01</span></article>
+        <article><span class="feature-icon" data-icon="workflow" aria-hidden="true"></span><h3>Build with skills.</h3><p>Combine focused capabilities into a workflow that reflects how your team actually gets things done.</p><span class="feature-index">02</span></article>
+        <article><span class="feature-icon" data-icon="spark" aria-hidden="true"></span><h3>Give repetition a rest.</h3><p>Find the handovers, lookups and routine steps that keep people from the work that needs their attention.</p><span class="feature-index">03</span></article>
+        <article><span class="feature-icon" data-icon="shield" aria-hidden="true"></span><h3>Keep people in control.</h3><p>Define permissions and review points before connecting live systems. Make sensitive decisions deliberate.</p><span class="feature-index">04</span></article>
+      </div>
     </section>
 
-    <section id="datenschutz" class="py-20 bg-kanzlei-slate text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:flex lg:items-center lg:justify-between">
-                <div class="max-w-xl">
-                    <span class="text-xs font-semibold uppercase tracking-wider text-kanzlei-accent bg-blue-500/10 px-3 py-1 rounded-full">Höchste Standards</span>
-                    <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Datenschutz & Sicherheit an erster Stelle</h2>
-                    <p class="mt-4 text-slate-400 leading-relaxed">
-                        Gerade im Bereich der Steuerberatung sind Mandatendaten hochsensibel. Golius Automation setzt konsequent auf datenschutzorientierte Architekturen.
-                    </p>
-                </div>
-                <div class="mt-10 lg:mt-0 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:max-w-xl w-full">
-                    <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-                        <h4 class="font-semibold text-white">Self-Hosted Infrastruktur</h4>
-                        <p class="mt-2 text-sm text-slate-400">Die Daten verbleiben vollständig in Ihrer eigenen, kontrollierten Serverumgebung.</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-                        <h4 class="font-semibold text-white">Rollenbasierte Zugriffe</h4>
-                        <p class="mt-2 text-sm text-slate-400">Präzise Berechtigungsstrukturen sichern den Zugriff vor unbefugten internen und externen Blicken.</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-                        <h4 class="font-semibold text-white">Volle Datenkontrolle</h4>
-                        <p class="mt-2 text-sm text-slate-400">Kein ungefragter Abfluss an Drittanbieter-Cloud-Dienste. Nachvollziehbare Prozesse pur.</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-                        <h4 class="font-semibold text-white">Moderne KI-Unterstützung</h4>
-                        <p class="mt-2 text-sm text-slate-400">Smarte Algorithmen, kombiniert mit lokaler und sicherer Datenhoheit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="control" class="control wrap" aria-labelledby="control-heading"><div class="control-visual" aria-hidden="true"><div class="control-orbit"><span class="orbit-point point-one"></span><span class="orbit-point point-two"></span><span class="orbit-point point-three"></span><div class="control-core" data-icon="shield"></div></div><div class="control-chip"><span class="check-dot">✓</span> You decide what happens next</div></div><div class="control-copy"><p class="eyebrow">AUTOMATION WITH INTENTION</p><h2 id="control-heading">More capability.<br>Still your call.</h2><p>Useful automation starts with clear boundaries. Decide which systems are connected, what an agent can access, and where a person needs to review the work.</p><div class="control-footnote"><span data-icon="lock" aria-hidden="true"></span><p>This demo stays in your browser. It has no production connections, sends no messages, and doesn’t save your input.</p></div></div></section>
 
-    <section id="ablauf" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold tracking-tight text-kanzlei-slate">Der Weg zu Ihrer automatisierten Kanzlei</h2>
-                <p class="mt-4 text-lg text-slate-600">Ein strukturierter Einführungsprozess garantiert minimalen Aufwand für Ihr Team.</p>
-            </div>
-
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                <div class="relative bg-kanzlei-bg p-8 rounded-2xl border border-slate-100">
-                    <div class="absolute -top-4 left-6 bg-kanzlei-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</div>
-                    <h3 class="text-lg font-bold mt-2 text-kanzlei-slate">Anwendungsbeispiele definieren</h3>
-                    <p class="mt-2 text-sm text-slate-600">Gemeinsam identifizieren wir lohnende Abläufe wie Dokumenteneingang, Mandantenanfragen oder Fristenabgleiche.</p>
-                </div>
-                <div class="relative bg-kanzlei-bg p-8 rounded-2xl border border-slate-100">
-                    <div class="absolute -top-4 left-6 bg-kanzlei-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</div>
-                    <h3 class="text-lg font-bold mt-2 text-kanzlei-slate">Individuelle Anpassung</h3>
-                    <p class="mt-2 text-sm text-slate-600">Schnittstellen werden synchronisiert und Workflows exakt nach Ihren Kanzleivorgaben aufgesetzt.</p>
-                </div>
-                <div class="relative bg-kanzlei-bg p-8 rounded-2xl border border-slate-100">
-                    <div class="absolute -top-4 left-6 bg-kanzlei-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</div>
-                    <h3 class="text-lg font-bold mt-2 text-kanzlei-slate">Langfristige Betreuung</h3>
-                    <p class="mt-2 text-sm text-slate-600">Nach der erfolgreichen Implementierung begleiten wir Sie kontinuierlich und optimieren bei Bedarf.</p>
-                </div>
-            </div>
-
-            <div class="mt-16 bg-slate-50 border border-slate-200/60 rounded-3xl p-8 md:p-12 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div>
-                    <div class="text-3xl font-extrabold text-kanzlei-accent">⏱</div>
-                    <div class="mt-2 font-semibold text-kanzlei-slate">Zeitersparnis</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-extrabold text-kanzlei-accent">🛡</div>
-                    <div class="mt-2 font-semibold text-kanzlei-slate">Weniger Fehler</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-extrabold text-kanzlei-accent">👥</div>
-                    <div class="mt-2 font-semibold text-kanzlei-slate">Mitarbeiterentlastung</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-extrabold text-kanzlei-accent">📈</div>
-                    <div class="mt-2 font-semibold text-kanzlei-slate">Höhere Skalierbarkeit</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-20 border-t border-slate-200 bg-kanzlei-bg">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-kanzlei-slate">Häufige Fragen & Einwände</h2>
-                <p class="mt-4 text-lg text-slate-600">Transparente Antworten für Entscheider.</p>
-            </div>
-            <div class="mt-12 space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200/60">
-                    <h4 class="font-bold text-kanzlei-slate">Unsere Prozesse sind viel zu individuell?</h4>
-                    <p class="mt-2 text-sm text-slate-600">Genau hier liegt unsere Stärke: Wir pressen Sie in kein starres Korsett, sondern entwickeln und konfigurieren Lösungen komplett individuell angepasst an Ihre etablierten Strukturen.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200/60">
-                    <h4 class="font-bold text-kanzlei-slate">Welche Daten verlassen unser Unternehmen?</h4>
-                    <p class="mt-2 text-sm text-slate-600">Durch unseren Fokus auf kontrollierte Datenflüsse und Self-Hosting-Infrastrukturen behalten Sie zu jedem Zeitpunkt die volle Hoheit und Kontrolle über alle Mandantendaten.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200/60">
-                    <h4 class="font-bold text-kanzlei-slate">Wir haben aktuell absolut keine Zeit für ein IT-Projekt?</h4>
-                    <p class="mt-2 text-sm text-slate-600">Unser strukturierter Einführungsprozess ist so konzipiert, dass Ihr Tagesgeschäft kaum tangiert wird. Wir übernehmen die schwere Arbeit, um Ihnen schnellstmöglich Freiräume zu schaffen.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200/60">
-                    <h4 class="font-bold text-kanzlei-slate">Welche Systeme können integriert werden?</h4>
-                    <p class="mt-2 text-sm text-slate-600">Wir binden gängige Kanzleisoftware, E-Mail-Server sowie Vorsysteme und Datenbanken nahtlos über standardisierte oder eigens entwickelte Schnittstellen an.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="kontakt" class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-kanzlei-slate">Jetzt unverbindliches Beratungsgespräch anfragen</h2>
-                <p class="mt-4 text-slate-600">Lassen Sie uns gemeinsam herausfinden, welche Potenziale in Ihrer Kanzlei schlummern.</p>
-            </div>
-            <div class="mt-12">
-                <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                    
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
-                        <div class="mt-1">
-                            <input type="text" name="name" id="name" required class="block w-full rounded-lg border-slate-300 bg-slate-50 py-3 px-4 text-sm border focus:border-kanzlei-accent focus:ring-1 focus:ring-kanzlei-accent outline-none transition">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="kanzlei" class="block text-sm font-medium text-slate-700">Kanzlei / Unternehmen</label>
-                        <div class="mt-1">
-                            <input type="text" name="kanzlei" id="kanzlei" class="block w-full rounded-lg border-slate-300 bg-slate-50 py-3 px-4 text-sm border focus:border-kanzlei-accent focus:ring-1 focus:ring-kanzlei-accent outline-none transition">
-                        </div>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="email" class="block text-sm font-medium text-slate-700">E-Mail-Adresse</label>
-                        <div class="mt-1">
-                            <input type="email" name="email" id="email" required class="block w-full rounded-lg border-slate-300 bg-slate-50 py-3 px-4 text-sm border focus:border-kanzlei-accent focus:ring-1 focus:ring-kanzlei-accent outline-none transition">
-                        </div>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="message" class="block text-sm font-medium text-slate-700">Nachricht (Optional)</label>
-                        <div class="mt-1">
-                            <textarea id="message" name="message" rows="4" class="block w-full rounded-lg border-slate-300 bg-slate-50 py-3 px-4 text-sm border focus:border-kanzlei-accent focus:ring-1 focus:ring-kanzlei-accent outline-none transition"></textarea>
-                        </div>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-xl shadow-md text-base font-medium text-white bg-kanzlei-slate hover:bg-kanzlei-accent transition">
-                            Termin vereinbaren
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-                <p>&copy; 2026 Golius Automation. Alle Rechte vorbehalten.</p>
-                <p class="mt-1 text-slate-500">Fokus auf B2B-SaaS-Stil, Klarheit und Vertrauen.</p>
-            </div>
-            <div class="flex space-x-6">
-                <a href="#" class="hover:text-white transition">Impressum</a>
-                <a href="#" class="hover:text-white transition">Datenschutz</a>
-            </div>
-        </div>
-    </footer>
-
+    <section class="sales wrap" id="sales" aria-labelledby="sales-heading"><div><p class="eyebrow">LET’S FIND YOUR FIRST WORKFLOW</p><h2 id="sales-heading">What would you<br>take off your team’s plate?</h2><p>Bring a process. We’ll talk through the possibilities,<br class="desktop-break"> your existing tools, and the right level of control.</p></div><div class="sales-action"><a class="button button-blue" href="https://calendly.com/gorovoy-golius/30min" target="_blank" rel="noopener noreferrer">Talk to Sales <span aria-hidden="true">↗</span><span class="sr-only"> (opens Calendly in a new tab)</span></a><p>Choose a time on our booking page.<br>No form. No waiting for a reply.</p></div></section>
+  </main>
+  <footer class="site-footer wrap"><div><a href="#" class="brand" aria-label="Golius home"><img src="assets/mark.svg" width="26" height="26" alt=""><span>Golius<span class="brand-period">.</span></span></a><p>Golius Automation · Connecting work.</p></div><p class="copyright">© 2026 Golius Automation</p><nav aria-label="Legal information"><a href="legal.html#impressum">Impressum</a><a href="legal.html#datenschutz">Datenschutz</a></nav></footer>
 </body>
 </html>
