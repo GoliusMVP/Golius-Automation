@@ -60,7 +60,7 @@ test('demo remains local and legal/sales links resolve honestly',async({page,con
  await page.goto('/');await generate(page);await runToApproval(page);await page.locator('#approve-example').click();await page.clock.runFor(4000);
  expect(external).toEqual([]);expect(await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
  await expect(page.locator('#sales a.button')).toHaveAttribute('href','https://calendly.com/gorovoy-golius/30min');
- await page.getByRole('link',{name:'Imprint',exact:true}).click();await expect(page.getByRole('heading',{name:'Impressum',exact:true})).toBeVisible();await expect(page.locator('.legal-warning')).toContainText('before');
+ await page.getByRole('link',{name:'Imprint',exact:true}).click();await expect(page.getByRole('heading',{name:'Impressum',exact:true})).toBeVisible();await expect(page.locator('#impressum')).toContainText('This website is still under construction.');await expect(page.locator('#datenschutz')).toContainText('This website is still under construction.');
 });
 
 test('mobile playback keeps the active approval and its decision in view',async({page})=>{

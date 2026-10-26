@@ -12,7 +12,7 @@ async function walk(directory) {
 }
 const files=[...await walk('assets'),...await walk('scripts'),...await walk('tests')];
 for(const file of files.filter(name=>/\.m?js$/.test(name)))execFileSync(process.execPath,['--check',file],{stdio:'inherit'});
-for(const file of ['index.html','legal.html']) {
+for(const file of ['index.html','solutions.html','legal.html']) {
   const html=await readFile(file,'utf8');
   assert.match(html,/<html lang="en">/);
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]);

@@ -30,13 +30,16 @@ Browser installation may require system administration privileges; install its h
 ## Structure
 
 - `index.html`: public homepage and accessible builder shell.
+- `solutions.html`: bilingual solutions page with six application areas, workflow example, principles, collaboration process and existing Calendly CTAs.
+- `assets/css/solutions.css`: responsive styles extending the shared design.
+- `assets/handouts/Golius_Automation_Handout.pdf`: original three-page German handout, copied from `/home/n8nserver/handouts/Golius_Automation_Handout.pdf`; included in the static export.
 - `assets/css/`: site and builder styles.
 - `assets/js/plan.mjs`: deterministic example planning and dependencies.
 - `assets/js/runner.mjs`: cancellable playback and explicit approval pause.
 - `assets/js/flow.mjs`: responsive nodes, measured SVG connections and pulses.
 - `assets/js/builder.mjs`: controls, sample outputs, focus and state.
 - `assets/js/site.mjs`, `icons.mjs`, `assets/mark.svg`: local page initialization and branding.
-- `legal.html`: clearly marked legal-content preview; verified notices must replace it before publication.
+- `legal.html`: imprint and privacy sections with a bilingual under-construction notice, as requested for publication.
 - `scripts/`, `tests/`: local server, build, checks, logic and Chromium tests.
 
 ## Demo boundaries
@@ -49,10 +52,12 @@ Sales links use the booking URL already present in the original project. No book
 
 The website and interactive demo support English and German. A same-origin request to Cloudflare's `/cdn-cgi/trace` selects German for `loc=DE` and English for other countries, regardless of browser language. No third-party geolocation service, location permission, cookies or browser storage are used. If the request fails, returns an unknown country or exceeds 1.5 seconds, the primary browser language is used (German or English). VPN/proxy exit locations determine the detected country.
 
-The header's DE / EN controls override automatic detection using `?lang=de` or `?lang=en`. This choice is preserved when navigating between the homepage and legal page. Remove `lang` from the URL to return to automatic detection. Without JavaScript, the static English content remains available. Translation copy lives in `assets/js/translations.mjs`.
+The header's DE / EN controls override automatic detection using `?lang=de` or `?lang=en`. This choice is preserved when navigating between the homepage, solutions page and legal page. Remove `lang` from the URL to return to automatic detection. Without JavaScript, the static English content remains available. Translation copy lives in `assets/js/translations.mjs`.
 
 Checks include Germany with an English browser, foreign countries with a German browser, explicit overrides, failed/invalid/stalled lookups, translated approval playback, legal navigation and German layouts at 320, 390, 768 and 1440 pixels.
 
 ## Publication
 
 Published through the existing GitHub Pages root deployment from `main`. `CNAME` remains `golius.de`. The initial redesign was published as commit `1d672f6` with explicit authorization to preserve its existing content, including the marked legal placeholders. See [the implementation and deployment report](docs/REDESIGN-REPORT.md) for the original checks, screenshots, publishing steps, baseline and rollback. Cloudflare Access settings are separate from GitHub Pages publication.
+
+Solutions browser checks cover both languages at 320, 390, 768 and 1440 pixels, navigation with language preservation, PDF download and content without JavaScript.

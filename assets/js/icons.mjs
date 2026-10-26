@@ -1,4 +1,5 @@
 const paths = {
+  phone: '<path d="m7 3 3 5-3 3c1.5 3 3 4.5 6 6l3-3 5 3c0 3-2 5-5 4C8 19 5 16 3 8 2 5 4 3 7 3z"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/>',
   classify: '<path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h4"/>',
   crm: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11M13 13h4M13 16h3"/>',

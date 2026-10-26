@@ -58,7 +58,7 @@ export function localizeDocument(document, language) {
   if (explicit === 'de' || explicit === 'en') {
     for (const link of document.querySelectorAll('a[href]')) {
       const url = new URL(link.href);
-      if (url.origin === location.origin && url.pathname !== location.pathname) {
+      if (url.origin === location.origin && url.pathname !== location.pathname && /(?:\.html|\/)$/.test(url.pathname)) {
         url.searchParams.set('lang', explicit); link.href = url.href;
       }
     }

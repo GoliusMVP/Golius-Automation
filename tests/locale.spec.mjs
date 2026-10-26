@@ -50,7 +50,8 @@ test('manual switch overrides country and survives navigation to legal and back'
   await page.getByRole('link', { name: 'Datenschutz', exact: true }).click();
   await expect(page).toHaveURL(/legal.html\?lang=de#datenschutz/);
   await expect(page.getByRole('link', { name: 'Zurück zur Website' })).toBeVisible();
-  await expect(page.locator('.legal-warning')).toContainText('geprüften Rechtstexte');
+  await expect(page.locator('#impressum')).toContainText('Diese Website befindet sich noch im Aufbau.');
+  await expect(page.locator('#datenschutz')).toContainText('Diese Website befindet sich noch im Aufbau.');
   await page.getByRole('link', { name: 'Zurück zur Website' }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'de');
   await page.getByRole('link', { name: 'English', exact: true }).click();
